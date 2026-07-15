@@ -1,151 +1,116 @@
 # Darwin-TryHackMe-Threat-Hunting-Simulator-Lab
+
 Hands-on TryHackMe Threat Hunting Simulator investigation using Elastic SIEM to analyze malicious PowerShell activity, malware execution, credential dumping, attacker reconnaissance, and Windows Sysmon logs while documenting the attack chain with MITRE ATT&amp;CK techniques.
 ---
 
-## Objectives
+## 🎯 Objectives
 
-- Investigate suspicious Windows events
-- Analyze Sysmon Process Creation events
-- Identify malicious PowerShell activity
-- Track malware execution
-- Detect credential dumping
-- Investigate attacker reconnaissance
+- Perform a threat hunting investigation
+- Analyze logs using Elastic Discover
+- Identify malicious process creation events
+- Investigate malware execution
+- Detect credential dumping activity
+- Document attacker behavior
 - Build an attack timeline
-- Document findings using MITRE ATT&CK
+- Map activity to the MITRE ATT&CK framework
 
 ---
 
-## Tools Used
+## 🛠️ Technologies Used
 
-- TryHackMe Threat Hunting Simulator
-- Elastic SIEM (Discover)
-- Elastic Query Language (KQL)
+- TryHackMe
+- Elastic SIEM
+- Elastic Discover
 - Windows Sysmon
-- MITRE ATT&CK Framework
+- Windows Event Logs
+- MITRE ATT&CK
+- Threat Hunting Methodology
 
 ---
 
-## Skills Demonstrated
+## 🔍 Skills Demonstrated
 
 - Threat Hunting
 - SIEM Investigation
-- KQL Searching
 - Process Analysis
-- IOC Identification
+- Malware Detection
 - Windows Event Log Analysis
-- Malware Investigation
-- Credential Dumping Detection
-- Attack Timeline Reconstruction
+- Attack Chain Reconstruction
 - MITRE ATT&CK Mapping
+- Incident Documentation
 
 ---
 
-## Attack Summary
+## 📸 Screenshots
 
-### Stage 1 – Initial Access
+### 01 – Typo Snare Briefing
+Initial investigation briefing describing the suspected attack and objectives.
 
-The attacker downloaded a malicious executable using a PowerShell command from an external website.
+![01-typo-snare-briefing](screenshots/01-typo-snare-briefing.png)
 
-**MITRE ATT&CK**
+---
+
+### 02 – Threat Intelligence Dashboard
+Threat intelligence information used to investigate attacker infrastructure and indicators.
+
+![02-threat-intel-dashboard](screenshots/02-threat-intel-dashboard.png)
+
+---
+
+### 03 – Elastic Discover Overview
+Elastic Discover interface used to investigate Windows event logs and telemetry.
+
+![03-elastic-discover-overview](screenshots/03-elastic-discover-overview.png)
+
+---
+
+### 04 – Process Creation Events
+Sysmon Process Create (Event ID 1) logs showing process creation activity during the investigation.
+
+![04-process-creation-events](screenshots/04-process-creation-events.png)
+
+---
+
+### 05 – Malicious Download Detected
+Evidence of malicious activity identified during the investigation, including suspicious executable execution.
+
+![05-malicious-download-detected](screenshots/05-malicious-download-detected.png)
+
+---
+
+### 06 – Attack Chain Summary
+Final reconstructed attack chain documenting each stage of the intrusion and mapping activity to MITRE ATT&CK techniques.
+
+![06-attack-chain-summary](screenshots/06-attack-chain-summary.png)
+
+---
+
+## 📈 Investigation Summary
+
+During this investigation I:
+
+- Investigated Windows telemetry in Elastic SIEM
+- Reviewed Sysmon process creation events
+- Identified suspicious malware execution
+- Investigated credential dumping activity
+- Documented attacker discovery techniques
+- Reconstructed the attack timeline
+- Produced a complete incident report
+
+---
+
+## 📚 MITRE ATT&CK Techniques
+
 - T1189 – Drive-by Compromise
-
----
-
-### Stage 2 – Malware Execution
-
-The downloaded malware (`bomb.exe`) was executed, allowing the attacker to gain code execution on the compromised workstation.
-
-**MITRE ATT&CK**
 - T1204 – User Execution
-
----
-
-### Stage 3 – Credential Dumping
-
-The attacker executed **Mimikatz** to dump credentials from LSASS and obtain user password hashes.
-
-**MITRE ATT&CK**
 - T1003 – OS Credential Dumping
-
----
-
-### Stage 4 – Network Discovery
-
-The attacker executed Windows command-line tools to enumerate users, groups, shares, and network information.
-
-**MITRE ATT&CK**
 - T1016 – System Network Configuration Discovery
 
 ---
 
-## Indicators of Compromise (IOCs)
+## 📌 Key Takeaways
 
-### Host Indicators
-
-- bomb.exe
-- mimikatz.exe
-- net.exe
-- powershell.exe
-
-### Network Indicators
-
-- www.7zipp.org
-
----
-
-## MITRE ATT&CK Techniques
-
-| Technique | ID |
-|-----------|----|
-| Drive-by Compromise | T1189 |
-| User Execution | T1204 |
-| OS Credential Dumping | T1003 |
-| System Network Configuration Discovery | T1016 |
-
----
-
-## Screenshots
-
-### 1. Threat Hunting Simulator Briefing
-
-![Threat Hunting Simulator Briefing](screenshots/01-typo-snare-briefing.png)
-
----
-
-### 2. Threat Intelligence Dashboard
-
-![Threat Intelligence Dashboard](screenshots/02-threat-intel-dashboard.png)
-
----
-
-### 3. Elastic Discover Overview
-
-![Elastic Discover Overview](screenshots/03-elastic-discover-overview.png)
-
----
-
-### 4. Process Creation Events
-
-![Process Creation Events](screenshots/04-process-creation-events.png)
-
----
-
-### 5. Malicious Download Detected
-
-![Malicious Download Detected](screenshots/05-malicious-download-detected.png)
-
----
-
-## What I Learned
-
-- Investigated attacker behavior using Elastic SIEM.
-- Queried Windows Sysmon events with KQL.
-- Identified malicious PowerShell activity.
-- Traced malware execution through process creation events.
-- Detected credential dumping with Mimikatz.
-- Investigated attacker reconnaissance using Windows utilities.
-- Mapped attacker actions to the MITRE ATT&CK Framework.
-- Documented the attack lifecycle in a structured incident timeline.
+This project demonstrates practical SOC analyst skills by combining threat intelligence, log analysis, process investigation, attack chain reconstruction, and incident reporting in a realistic threat hunting scenario using Elastic SIEM.
 
 ---
 
